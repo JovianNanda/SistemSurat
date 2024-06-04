@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <h1>Login Anj <?= $nama ?></h1>
+    <h1>Login Anj </h1>
+    <h1>Nama : <?= $nama ?></h1>
+    <h1>Umur : <?= $umur ?? '19' ?></h1>
 </body>
 
 </html>

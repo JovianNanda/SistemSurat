@@ -1,8 +1,14 @@
 <?php
-route('/', function () {
+route('', function () {
     view('home');
 });
 
-route('/login', function () {
-    view('login', ['nama' => 'Super Admin']);
+route('about', function () {
+    view('about', ['nama' => 'Super Admin']);
 });
+
+route('about/{umur}', function ($umur) {
+    view('about', ['nama' => 'Super Admin', 'umur' => $umur]);
+});
+
+handleRoute();

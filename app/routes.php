@@ -6,16 +6,12 @@ route('', function () {
 });
 
 
-route('about', function () {
-    return view('about', ['user' => getAllUser()]);
+route('get/user', function () {
+    return view('user', ['users' => getAllUser()]);
 });
 
-route('surat/masuk/', function () {
-    return view('surat/masuk');
-});
-
-route('surat/masuk/{id}', function ($id) {
-    return view('surat/masuk', ['id' => $id]);
+route('get/user/{id}', function ($id) {
+    return view('user', ['id' => $id, 'users' => getUser($id)]);
 });
 
 handleRoute();

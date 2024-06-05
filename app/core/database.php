@@ -5,19 +5,35 @@ function connectDB()
 {
     global $koneksi;
 
-    $koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $koneksi = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
+    if ($koneksi->connect_error) {
+        die('Connection Failed' . $koneksi->connect_error);
+    }
     return $koneksi;
 }
 
-function query($query)
+function queryData($query)
 {
     global $koneksi;
 
-    return mysqli_query($koneksi, $query);
+    $result = $koneksi->query($query);
+    if ($result === false) {
+        die("Error: " . $koneksi->error);
+    }
+
+    return $result;
 }
 
-function fetchAll($object)
+function fetchAssoc($result)
 {
-    return mysqli_fetch_all($object);
+    global $koneksi;
+    $data = [];
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    $koneksi->close();
+
+    return $data;
 }

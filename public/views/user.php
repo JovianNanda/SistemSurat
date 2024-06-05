@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +8,12 @@
 </head>
 
 <body>
-    <h1>Halo <?= $user[0][1]; ?></h1>
+    <h1>
+        <?php foreach ($users as $user) : ?>
+            <?php echo $user['nama'];
+            echo '<br>' ?>
+        <?php endforeach; ?>
+    </h1>
 </body>
 
 </html>

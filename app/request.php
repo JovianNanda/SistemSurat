@@ -2,5 +2,9 @@
 
 function getAllUser()
 {
-    return fetchAll(query("SELECT * FROM user"));
+    return fetchAssoc(queryData('SELECT * FROM user'));
+}
+function getUser($id)
+{
+    return fetchAssoc(queryData("SELECT * FROM user WHERE id = $id"));
 }

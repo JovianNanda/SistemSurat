@@ -2,7 +2,7 @@
 $RouteLists = [];
 function handleURL()
 {
-    $getURL = array_values(array_filter(explode('/', $_SERVER['REQUEST_URI'])));
+    $getURL = array_values(array_filter(explode('/', $_SERVER['REQUEST_URI']), 'strlen'));
     unset($getURL[0]);
     return array_values($getURL);
 }
@@ -22,7 +22,6 @@ function handleRoute()
 
     foreach ($RouteLists as $route => $callback) {
         $route = array_values(array_filter(explode('/', $route)));
-
         if (count($URL) == count($route)) {
             $match = true;
             foreach ($route as $key => $value) {
@@ -52,13 +51,19 @@ function handleRoute()
     }
 
     http_response_code(404);
-    view('error/page', ['error' => '404 | Halaman tidak ditemukan']);
+    view('error/page', ['error' => '404 | Route Halaman tidak ditemukan']);
 }
 
 function view($view, $data = [])
 {
     extract($data);
-    require_once VIEW_PATH . $view . '.php';
+    $view = VIEW_PATH . $view . '.php';
+    if (file_exists($view)) {
+        require_once $view;
+    } else {
+        http_response_code(404);
+        view('error/page', ['error' => '404 | File View Tidak Ditemukan']);
+    }
 }
 
 function handleError($message)

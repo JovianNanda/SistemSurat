@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +11,7 @@
 </head>
 
 <body>
-    <h1>Login Anj </h1>
-    <h1>Nama : <?= $nama ?></h1>
-    <h1>Umur : <?= $umur ?? '19' ?></h1>
+    <h1>Halo <?= $user[0][1]; ?></h1>
 </body>
 
 </html>

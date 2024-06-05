@@ -1,14 +1,21 @@
+<!-- dalam file ini disimpan routing -->
+
 <?php
 route('', function () {
-    view('home');
+    return view('home');
 });
+
 
 route('about', function () {
-    view('about', ['nama' => 'Super Admin']);
+    return view('about', ['user' => getAllUser()]);
 });
 
-route('about/{umur}', function ($umur) {
-    view('about', ['nama' => 'Super Admin', 'umur' => $umur]);
+route('surat/masuk/', function () {
+    return view('surat/masuk');
+});
+
+route('surat/masuk/{id}', function ($id) {
+    return view('surat/masuk', ['id' => $id]);
 });
 
 handleRoute();

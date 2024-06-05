@@ -2,7 +2,7 @@
 
 const BASE_URL = 'http://localhost/sistemsurat/';
 
-const VIEW_PATH = 'views/';
+const VIEW_PATH = 'public/views/';
 
 const DB_HOST = 'localhost';
 const DB_USER = 'root';

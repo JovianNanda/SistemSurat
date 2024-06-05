@@ -23,7 +23,6 @@ function handleRoute()
     foreach ($RouteLists as $route => $callback) {
         $route = array_values(array_filter(explode('/', $route)));
 
-
         if (count($URL) == count($route)) {
             $match = true;
             foreach ($route as $key => $value) {
@@ -53,7 +52,7 @@ function handleRoute()
     }
 
     http_response_code(404);
-    view('error/404', ['error' => '404 | Halaman tidak ditemukan']);
+    view('error/page', ['error' => '404 | Halaman tidak ditemukan']);
 }
 
 function view($view, $data = [])

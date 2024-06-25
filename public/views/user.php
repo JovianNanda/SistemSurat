@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     <?php
     global $koneksi;
     if (!isset($_SESSION['username'])) {
@@ -49,46 +48,38 @@
                     <table class="min-w-full leading-normal">
                         <thead>
                             <tr>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Username</th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Password</th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Divisi</th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Level User</th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($users as $user) : ?>
-                            <tr>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <?= $user['username']; ?></td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <?= $user['password']; ?></td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <?= $user['nama_divisi']; ?></td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <?= $user['leveluser'] == 1 ? 'Admin' : 'User'; ?></td>
-                                <td>
-                                    <a href="<?= BASE_URL; ?>user/update/<?= $user['id_user']; ?>"
-                                        class="badge bg-gray-600 text-white text-xs p-2 mx-1">
-                                        <i class="fad fa-edit text-m"></i>
-                                    </a>
-                                    <a onclick="return confirm('yakin ingin menghapus?')"
-                                        href="<?= BASE_URL; ?>user/delete/<?= $user['id_user']; ?>"
-                                        class="badge bg-red-400 text-white text-xs p-2 mx-1">
-                                        <i class="fad fa-trash-alt text-m"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <?= $user['username']; ?></td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <?= $user['password']; ?></td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <?= $user['nama_divisi']; ?></td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <?= $user['leveluser'] == 1 ? 'Admin' : 'User'; ?></td>
+                                    <td>
+                                        <a href="<?= BASE_URL; ?>user/update/<?= $user['id_user']; ?>" class="badge bg-gray-600 text-white text-xs p-2 mx-1">
+                                            <i class="fad fa-edit text-m"></i>
+                                        </a>
+                                        <a onclick="return confirm('yakin ingin menghapus?')" href="<?= BASE_URL; ?>user/delete/<?= $user['id_user']; ?>" class="badge bg-red-400 text-white text-xs p-2 mx-1">
+                                            <i class="fad fa-trash-alt text-m"></i>
+                                        </a>
+                                    </td>
+                                </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -97,24 +88,3 @@
         </div>
 
         <?php include VIEW_PATH . 'template/footer.php'; ?>
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>
-        <?php foreach ($users as $user) : ?>
-            <?php echo $user['nama'];
-            echo '<br>' ?>
-        <?php endforeach; ?>
-    </h1>
-</body>
-
-</html>
->>>>>>> b2ae299108ffe967362eaa7ac3db9befa1f0a3fc

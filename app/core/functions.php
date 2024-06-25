@@ -1,4 +1,5 @@
 <?php
+
 global $koneksi;
 function isGuest()
 {
@@ -124,7 +125,7 @@ function prosesSubmitSurat()
 
             try {
                 // Masukkan data ke dalam database
-                $pesan = tambahSuratMasuk($koneksi, $judul_surat, $tanggal_surat, $id_divisi, $id_user, $perihal, $file, $status_approve);
+                $pesan = tambahSuratMasuk($koneksi, $judul_surat, $tanggal_surat, $id_divisi, $id_user, $perihal, $file);
 
                 // Commit transaksi jika berhasil
                 mysqli_commit($koneksi);
@@ -199,7 +200,6 @@ function approveSurat($koneksi, $id_surat)
 {
     $query = "UPDATE surat SET status_approve = 1 WHERE id_surat = $id_surat";
     return mysqli_query($koneksi, $query);
-    header("Location: " . BASE_URL . "suratkeluar");
 }
 
 // Function untuk menghapus surat dari database berdasarkan ID

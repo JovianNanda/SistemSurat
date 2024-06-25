@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 global $koneksi;
 // session_start();
@@ -87,3 +88,19 @@ include VIEW_PATH . 'template/header.php';
 <?php
 include VIEW_PATH . 'template/footer.php';
 ?>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Anj!</h1>
+</body>
+
+</html>
+>>>>>>> b2ae299108ffe967362eaa7ac3db9befa1f0a3fc

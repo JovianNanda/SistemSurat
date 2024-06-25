@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 16, 2024 at 03:27 AM
+-- Host: localhost:3306
+-- Generation Time: Jun 25, 2024 at 02:58 AM
 -- Server version: 8.0.30
--- PHP Version: 8.3.3
+-- PHP Version: 8.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `divisi` (
   `id_divisi` int NOT NULL,
   `nama_divisi` varchar(100) NOT NULL,
   `singkatan` varchar(100) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `divisi`
@@ -60,7 +60,7 @@ CREATE TABLE `surat` (
   `tanggal_surat` date NOT NULL,
   `perihal` varchar(255) NOT NULL,
   `status_approve` tinyint(1) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `surat`
@@ -71,7 +71,9 @@ INSERT INTO `surat` (`id_surat`, `no_surat`, `judul_surat`, `file_path`, `id_use
 (142, '02/KEUA/SDMA/VI/2024', 'Surat Untuk SDM', 'public/uploads/Tugas Pertemuan 5.pdf', 1, 2, '2024-06-16', 'Surat Untuk SDM', 1),
 (144, '03/KEUA/PSRN/VI/2024', 'Surat Untuk Pemasaran', 'public/uploads/Tugas Pertemuan 5.pdf', 1, 3, '2024-06-16', 'Surat Untuk Pemasaran', 1),
 (145, '04/KEUA/PRDK/VI/2024', 'Surat Untuk Produksi', 'public/uploads/pertemuan_5_Memori.pdf', 1, 4, '2024-06-16', 'Surat Untuk Produksi', 1),
-(147, '05/KEUA/ITSP/VI/2024', 'Surat Untuk IT Sup', 'public/uploads/pertemuan_1_pengenalan_komputer (1).pptx', 1, 5, '2024-06-16', 'Surat Untuk IT Sup', 1);
+(147, '05/KEUA/ITSP/VI/2024', 'Surat Untuk IT Sup', 'public/uploads/pertemuan_1_pengenalan_komputer (1).pptx', 1, 5, '2024-06-16', 'Surat Untuk IT Sup', 1),
+(149, '06/KEUA/SDMA/VI/2024', 'Test', 'public/uploads/WhatsApp Image 2024-04-01 at 10.03.00_58e6eb2d.jpg', 1, 2, '2024-06-25', 'test', 0),
+(150, '07/PSRN/ITSP/VI/2024', 'Test', 'public/uploads/Tugas Sejarah Website_JovianNandaSismawan_230030017.pdf', 8, 5, '2024-06-25', 'test', 0);
 
 -- --------------------------------------------------------
 
@@ -85,7 +87,7 @@ CREATE TABLE `user` (
   `password` varchar(100) NOT NULL,
   `id_divisi` int NOT NULL,
   `leveluser` tinyint(1) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `user`
@@ -140,7 +142,7 @@ ALTER TABLE `divisi`
 -- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `id_surat` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `id_surat` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `user`
